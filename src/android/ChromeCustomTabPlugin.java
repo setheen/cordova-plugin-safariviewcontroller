@@ -47,7 +47,9 @@ public class ChromeCustomTabPlugin extends CordovaPlugin{
             case "isAvailable":
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, mCustomTabPluginHelper.isAvailable()));
                 return true;
-
+			case "tabbedBrowserName":
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, mCustomTabPluginHelper.tabbedBrowserName()));
+                return true;
             case "show": {
                 final JSONObject options = args.getJSONObject(0);
                 final String url = options.optString("url");

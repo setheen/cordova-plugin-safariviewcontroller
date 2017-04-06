@@ -9,6 +9,16 @@ module.exports = {
     };
     exec(callback, errorHandler, "SafariViewController", "isAvailable", []);
   },
+  tabbedBrowserName: function(callback)
+  {
+    var errorHandler = function errorHandler(error) {
+      // An error has occurred while trying to access the
+      // SafariViewController native implementation, most likely because
+      // we are on an unsupported platform.
+      callback(false);
+    };
+    exec(callback, errorHandler, "SafariViewController", "tabbedBrowserName", []);
+  },
   show: function (options, onSuccess, onError) {
     options = options || {};
     if (!options.hasOwnProperty('animated')) {

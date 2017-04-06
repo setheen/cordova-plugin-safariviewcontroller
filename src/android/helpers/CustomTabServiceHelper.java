@@ -37,6 +37,10 @@ public class CustomTabServiceHelper implements ServiceConnectionCallback {
     public boolean isAvailable(){
         return !TextUtils.isEmpty(mPackageNameToBind);
     }
+	
+	public String tabbedBrowserName(){
+        return mPackageNameToBind;
+    }
 
     /**
      * Unbinds the Activity from the Custom Tabs Service.
